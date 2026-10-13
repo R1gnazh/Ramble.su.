@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1b1b25">
+<title>RAMBLE — Check Center</title>
+<link rel="icon" type="image/png" href="server-icon.png">
+<style>
+:root{color-scheme:dark;--bg:#1b1b25;--panel:#22222e;--panel2:#292936;--line:#393946;--orange:#ff941f;--text:#faf9fb;--muted:#b9b7c2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{width:min(1100px,100%);margin:auto;padding:0 24px 55px}
+.credit{text-align:center;padding:13px 0 10px;color:#aaa8b4;font-size:11px;letter-spacing:1.5px;text-transform:uppercase}.credit b{color:var(--orange);font-weight:800}
+header{display:flex;align-items:center;gap:16px;padding:22px 0 26px;border-bottom:1px solid #373642}
+.logo{width:52px;height:52px;object-fit:cover;border-radius:13px}.wordmark{font-size:25px;font-weight:950;letter-spacing:2.5px}.wordmark small{display:block;font-size:9px;letter-spacing:2px;color:#aaa8b4;font-weight:600;margin-top:3px}
+nav{margin-left:auto;display:flex;gap:23px;align-items:center}nav a{color:#e5e3eb;text-decoration:none;font-size:13px}nav a:hover{color:var(--orange)}.menu{font-size:26px;margin-left:4px;color:#f6f4fa}
+.hero{position:relative;overflow:hidden;border-radius:30px;margin:34px 0 24px;min-height:530px;padding:55px 48px 30px;background:radial-gradient(ellipse at 78% 25%,#a75b2a 0,transparent 36%),radial-gradient(ellipse at 28% 65%,#673c2d 0,transparent 45%),linear-gradient(140deg,#553126,#33242a 46%,#211d29);border:1px solid #4a3940}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#17151ccc 0%,#1b1729a8 55%,#17151c4d 100%),repeating-linear-gradient(135deg,transparent 0 58px,#ffffff06 59px 61px);pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:650px}.eyebrow{font-size:11px;font-weight:850;letter-spacing:2.4px;text-transform:uppercase;color:#ffc17a}.hero h1{font-size:clamp(42px,7vw,70px);line-height:1.03;letter-spacing:-2.4px;margin:18px 0 20px;font-weight:900}.hero h1 span{color:#ffad4a}.hero p{font-size:18px;line-height:1.65;color:#e0d6d3;max-width:490px;margin:0 0 28px}.cta{display:inline-block;text-decoration:none;background:var(--orange);color:#24170b;font-weight:900;padding:14px 22px;border-radius:12px;box-shadow:0 8px 25px #ff941f25}.cta:hover{filter:brightness(1.08)}
+.serverbox{position:relative;z-index:1;margin-top:55px;background:#20202b;border:1px solid #3a3947;border-radius:22px;padding:23px 25px;max-width:590px;box-shadow:0 18px 50px #0003}.serverline{display:flex;align-items:center;gap:12px;font-size:18px}.dot{width:9px;height:9px;background:#ff9a2f;border-radius:50%;box-shadow:0 0 12px #ff9a2f}.serverline strong{font-weight:650}.serverline span:last-child{color:#a6a3b0;font-size:14px;margin-left:auto}.meter{height:6px;border-radius:9px;background:#f4f1f6;margin-top:18px;overflow:hidden}.meter i{display:block;width:7%;height:100%;background:var(--orange);border-radius:9px}
+.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:38px 0 17px}.sectionhead h2{font-size:24px;margin:0;letter-spacing:-.6px}.sectionhead p{margin:0;color:var(--muted);font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{background:linear-gradient(150deg,#242430,#20202a);border:1px solid #393846;border-radius:18px;padding:22px;display:flex;flex-direction:column;min-height:245px;transition:transform .18s,border-color .18s}.card:hover{transform:translateY(-3px);border-color:#8a592d}.icon{display:grid;place-items:center;width:45px;height:45px;border-radius:13px;background:#39291f;color:#ffb45a;border:1px solid #624329;font-size:22px}.card h3{font-size:17px;margin:17px 0 8px}.card p{font-size:13px;line-height:1.7;color:var(--muted);margin:0 0 20px;flex:1}.btn{display:block;text-align:center;text-decoration:none;padding:12px 13px;border-radius:10px;background:var(--orange);color:#25180d;font-weight:850;font-size:13px}.btn.alt{background:#2d2c39;color:#ffbd72;border:1px solid #50404a}.notice{margin-top:22px;background:#24212a;border:1px solid #4a3b36;border-left:3px solid var(--orange);border-radius:12px;padding:16px 18px;color:#d2cbd1;font-size:13px;line-height:1.7}.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.step{background:#20202a;border:1px solid #393846;border-radius:15px;padding:18px}.num{color:#ffad4a;font-size:11px;font-weight:900;letter-spacing:1.7px}.step h3{font-size:15px;margin:9px 0 7px}.step p{font-size:13px;line-height:1.65;color:var(--muted);margin:0}.copyline{margin-top:22px;display:flex;align-items:center;gap:12px;background:#22222e;border:1px solid #383744;border-radius:16px;padding:17px 20px}.copyline code{font-family:inherit;font-size:16px;flex:1}.copyline button{border:0;background:transparent;color:#f4f0f8;font-size:20px;cursor:pointer}footer{margin-top:42px;border-top:1px solid #373642;padding-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#9693a2;font-size:11px}
+@media(max-width:760px){.wrap{padding:0 16px 38px}.credit{font-size:10px}header{padding:18px 0 22px}.logo{width:45px;height:45px}.wordmark{font-size:22px}nav a{display:none}.hero{margin-top:24px;min-height:610px;padding:36px 24px 25px;border-radius:25px}.hero h1{font-size:clamp(40px,11vw,58px);letter-spacing:-1.8px}.hero p{font-size:16px}.serverbox{margin-top:62px;padding:20px}.grid,.steps{grid-template-columns:1fr}.card{min-height:0}.sectionhead h2{font-size:21px}.sectionhead p{max-width:130px;text-align:right}.copyline code{font-size:15px}}
+</style></head>
+<body><main class="wrap">
+<div class="credit">Сделано <b>R1gnazh</b></div>
+<header>
+<img class="logo" src="server-icon.png" alt="Иконка RAMBLE">
+<div class="wordmark">RAMBLE<small>CHECK CENTER</small></div>
+<nav><a href="#tools">Инструменты</a><a href="#guide">Инструкция</a><span class="menu" aria-hidden="true">☰</span></nav>
+</header>
+<section class="hero">
+<div class="hero-content"><div class="eyebrow">RAMBLE.SU · MINECRAFT</div><h1>Чувствуй себя<br>как <span>дома.</span></h1><p>Инструменты для проверок — в одном месте. Выбирай нужную утилиту и переходи к источнику загрузки.</p><a class="cta" href="#tools">Открыть инструменты ↘</a></div>
+<div class="serverbox"><div class="serverline"><span class="dot"></span><strong>RAMBLE.SU</strong><span>Check Center</span></div><div class="meter"><i></i></div></div>
+</section>
+<div class="sectionhead" id="tools"><h2>Инструменты проверки</h2><p>Подготовлено для Windows</p></div>
+<section class="grid">
+<article class="card"><div class="icon">⌕</div><h3>Everything</h3><p>Быстрый поиск файлов и папок по имени на компьютере.</p><a class="btn" href="https://www.voidtools.com/downloads/" target="_blank" rel="noopener noreferrer">Скачать программу ↗</a></article>
+<article class="card"><div class="icon">▤</div><h3>ShellBags Explorer</h3><p>Просмотр ShellBag-артефактов Windows. Перед запуском сверяй версию и издателя.</p><a class="btn alt" href="https://www.sans.org/tools/shellbags-explorer" target="_blank" rel="noopener noreferrer">Открыть источник ↗</a></article>
+<article class="card"><div class="icon">◷</div><h3>JournalTrace</h3><p>Инструмент для просмотра записей NTFS Journal. Проверь описание и файлы релиза проекта.</p><a class="btn alt" href="https://github.com/ponei/JournalTrace/releases" target="_blank" rel="noopener noreferrer">Открыть релизы ↗</a></article>
+</section>
+<div class="notice"><b>Перед проверкой:</b> скачивай файлы только из проверенных источников. Не отключай защиту Windows и не передавай пароли, токены или другие личные данные. Если ссылка или файл выглядят подозрительно — уточни у администрации.</div>
+<div class="sectionhead" id="guide"><h2>Как пройти проверку</h2><p>Три простых шага</p></div>
+<section class="steps"><article class="step"><div class="num">ШАГ 01</div><h3>Ознакомься</h3><p>Уточни у проверяющего список программ и порядок действий.</p></article><article class="step"><div class="num">ШАГ 02</div><h3>Скачай утилиты</h3><p>Используй кнопки на этой странице и открывай указанные источники.</p></article><article class="step"><div class="num">ШАГ 03</div><h3>Следуй инструкциям</h3><p>Показывай только необходимую для проверки информацию.</p></article></section>
+<div class="copyline"><code>ramble.su</code><button aria-label="Скопировать ramble.su" onclick="navigator.clipboard?.writeText('ramble.su').then(()=>{this.textContent='✓'}).catch(()=>{})">▢</button></div>
+<footer><span>RAMBLE.SU · CHECK CENTER</span><span>Сделано R1gnazh</span></footer>
+</main></body></html>
